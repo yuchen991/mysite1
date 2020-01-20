@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送邮件</title>
+</head>
+<body>
+<form action="/bookstore/sendemail" method="post">
+    <p>
+        收件人:<input type="text" name="users">
+    </p>
+    <p>
+        题目:<input type="text" name="title">
+    </p>
+    <p>
+        <textarea rows="10" cols="30" name="content"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="发送">
+    </p>
+</form>
+
+</body>
+</html>

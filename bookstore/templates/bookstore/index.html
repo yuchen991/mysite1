@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+</head>
+<body>
+<a href="{%url 'make_csv'%}?page={{c_page.number}}">导出文件</a>
+{% for page in c_page %}
+<p>
+    {{page.title}}
+</p>
+{% endfor %}
+{%if c_page.has_previous%}
+<a href="{%url 'book_index'%}?page={{c_page.previous_page_number}}">上一页</a>
+{%else%}
+上一页
+{%endif%}
+{% for p in pageinator.page_range %}
+{% if p == c_page.number %}
+{{ p }}
+{% else %}
+<a href="{% url 'book_index' %}?page={{ p }}">{{ p }}</a>
+{% endif %}
+{% endfor %}
+{#下一页功能#}
+{% if c_page.has_next %}
+<a href="{% url 'book_index' %}?page={{c_page.next_page_number }}">下一页</a>
+{% else %}下一页
+{% endif %}
+
+</body>
+</html>

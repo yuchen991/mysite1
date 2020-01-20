@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/user/registe" method="post">
+    {%csrf_token%}
+    <p>
+        请输入姓名:<input type="text" name="username">
+    </p>
+    <p>
+        请输入邮箱:<input type="email" name="email">
+    </p>
+    <p>
+        请输入密码:<input type="password" name="password_1">
+    </p>
+    <p>
+        再次输入密码:<input type="password" name="password_2">
+    </p>
+    <p>
+        确认<input type="submit" value="注册">
+    </p>
+
+</form>
+</body>
+</html>
